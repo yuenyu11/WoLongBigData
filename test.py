@@ -73,16 +73,26 @@ def RTDepth(G,mainNode,Wid):#一条微博信息每时刻的传播深度
     plt.savefig('Picture/weibo'+Wid+'Depth.png')
     plt.show()
 
+def ExtractRelationNetwork(G,Wid):#提取一条微博的关系网络
+    output = open('F:/github/WoLongBigData/DataManager/weibo'+Wid+'relationship.txt', 'w+')
+    with open('F:/Document/MicroBlogPredict/weibo_dc_parse2015_link_filter', 'r') as f:
+        for position, line in enumerate(f):
+            t= line.strip().split('\t')
+            print(t[0])
+            if t[0] in G.nodes():
+                output.writelines(line)
+    output.close()
+
 G = nx.DiGraph()
 wid='3794305741726764'
 mainnode='2724513'
-with open('E:/data/PredictMicroblog/WoLongBigData/DataManager/weibo'+wid+'.txt', 'r') as f:
+with open('F:/github/WoLongBigData/DataManager/weibo'+wid+'.txt', 'r') as f:
     for position, line in enumerate(f):
         t= line.strip().split('\001')
         G.add_node(t[2],time=int(t[3]),content=t[4])
         G.add_edge(t[1],t[2])
 G = MissInformation(G,mainnode)
-RTDepth(G,mainnode,wid)
+ExtractRelationNetwork(G,wid)
 
 
 
