@@ -82,19 +82,51 @@ def ExtractRelationNetwork(G,Wid):#提取一条微博的关系网络
             if t[0] in G.nodes():
                 output.writelines(line)
     output.close()
+def FollowerRT(G,G_Relation):#转发来自粉丝的比例(0.71)
+    sumF=0.0
+    sumF2=0.0
+    sum=0.0
+    for i in G.edges():
+        sum=sum+1.0
+        if G_Relation.has_edge(i[1],i[0]):#是否来源于粉丝
+            sumF=sumF+1.0
+        else:
+            for j in G_Relation.in_edges(i[0]):
+                if G_Relation.has_edge(i[1],j[0]):#间接粉丝
+                    sumF2=sumF2+1.0
+    return [sumF/sum,sumF2/sum,(sumF+sumF2)/sum]
+
+def PredictWidth(U,G_Relation,p,P):#最终转发规模预测
+    sum = 0
+    NU=['']
+    if p >0.1:
+        for i in U:
+            if G.has_node(i):
+                sum=sum +G_Relation.in_degree(i)*p
+                for j in G_Relation.in_edges(i):
+                    NU.append(j[0])
+        return sum+PredictWidth(NU,G_Relation,p*P,P)
+    else:
+        return 0
 
 G = nx.DiGraph()
-wid='3794305741726764'
-mainnode='2724513'
-with open('F:/github/WoLongBigData/DataManager/weibo'+wid+'.txt', 'r') as f:
+G_Relation = nx.DiGraph()
+Wid='3794305741726764'
+mainNode='2724513'
+with open('E:/data/PredictMicroblog/WoLongBigData/DataManager/weibo'+Wid+'.txt', 'r') as f:
     for position, line in enumerate(f):
         t= line.strip().split('\001')
         G.add_node(t[2],time=int(t[3]),content=t[4])
         G.add_edge(t[1],t[2])
-G = MissInformation(G,mainnode)
-ExtractRelationNetwork(G,wid)
+G = MissInformation(G,mainNode)
 
-
+with open('E:/data/PredictMicroblog/WoLongBigData/DataManager/weibo'+Wid+'relationship.txt', 'r') as f:
+    for position, line in enumerate(f):
+        t= line.strip().split('\t')
+        if t.__len__()>1:
+            for i in t[1].split('\001'):
+                G_Relation.add_edge(t[0],i)
+print PredictWidth(['2724513'],G_Relation,0.71,0.71)
 
 
 
