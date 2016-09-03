@@ -96,13 +96,22 @@ def FollowerRT(G,G_Relation):#转发来自粉丝的比例(0.71)
                     sumF2=sumF2+1.0
     return [sumF/sum,sumF2/sum,(sumF+sumF2)/sum]
 
+def FollowerRatio(G,G_Relation):#转发粉丝/总粉丝
+    sumF=0.0
+    sum=0.0
+    for i in G.edges('2724513'):
+        if G_Relation.has_edge(i[1],i[0]):#是否来源于粉丝
+            sumF=sumF+1.0
+
+    sum =G_Relation.in_degree('2724513')
+    return sumF/sum
 def PredictWidth(U,G_Relation,p,P):#最终转发规模预测
     sum = 0
     NU=['']
     if p >0.1:
         for i in U:
             if G.has_node(i):
-                sum=sum +G_Relation.in_degree(i)*p
+                sum=sum +G_Relation.in_degree(i)*p/0.7
                 for j in G_Relation.in_edges(i):
                     NU.append(j[0])
         return sum+PredictWidth(NU,G_Relation,p*P,P)
@@ -126,7 +135,8 @@ with open('E:/data/PredictMicroblog/WoLongBigData/DataManager/weibo'+Wid+'relati
         if t.__len__()>1:
             for i in t[1].split('\001'):
                 G_Relation.add_edge(t[0],i)
-print PredictWidth(['2724513'],G_Relation,0.71,0.71)
+print PredictWidth(['2724513'],G_Relation,0.6,0.6)
+# print FollowerRatio(G,G_Relation)
 
 
 
