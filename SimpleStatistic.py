@@ -69,7 +69,7 @@ def RTDepth(G,mainNode,Wid):#一条微博信息每时刻的传播深度
             NG=MissInformation(G.subgraph(temp),mainNode)
             depth[i]=nx.eccentricity(NG.to_undirected())[mainNode]
     x=range(300)
-    plt.plot(x,depth,color='r')#转发规模随时间变化
+    plt.plot(x,depth,color='r')#传播深度随时间变化
     plt.savefig('Picture/weibo'+Wid+'Depth.png')
     plt.show()
 
