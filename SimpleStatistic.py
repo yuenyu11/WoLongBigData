@@ -19,6 +19,17 @@ def OneMicroblog(Wid):# 提取一条微博信息
                 output.writelines(line)
     output.close()
 
+def HaveRTUser():# 有转发行为的用户
+    output = open('F:/github/WoLongBigData/DataManager/HaveRTUser.txt', 'w+')
+    s='8381213'
+    with open('F:/Document/MicroBlogPredict/trainRepost.txt', 'r') as f:
+        for position, line in enumerate(f):
+            t= line.strip().split('\001')
+            print t[2]
+            if t[2] != s:
+                output.writelines(t[2]+'\n')
+                s=t[2]
+    output.close()
 def RTnet(Wid,mainNode):#一条微博信息的转发网络
     G = nx.DiGraph()
     with open('F:/github/WoLongBigData/DataManager/weibo'+Wid+'.txt', 'r') as f:
@@ -32,7 +43,7 @@ def RTnet(Wid,mainNode):#一条微博信息的转发网络
     plt.show()
 
 def RTWidth(G,Wid):#一条微博信息的累计传播广度
-    width=['']*300
+    width=[0]*300
     time = nx.get_node_attributes(G,'time')
     for i in time:
         if time[i]/900 < 288:
@@ -45,7 +56,7 @@ def RTWidth(G,Wid):#一条微博信息的累计传播广度
     plt.show()
 
 def RTWidthByTime(G,Wid):#一条微博信息的每个时刻（15min）的传播广度
-    width=['']*300
+    width=[0]*300
     time = nx.get_node_attributes(G,'time')
     for i in time:
         if time[i]/900 < 288:
@@ -74,10 +85,10 @@ def RTDepth(G,mainNode,Wid):#一条微博信息每时刻的传播深度
     plt.show()
 
 def ExtractRelationNetwork(G,Wid):#提取一条微博的关系网络
-    output = open('F:/github/WoLongBigData/DataManager/weibo'+Wid+'relationship.txt', 'w+')
-    with open('F:/Document/MicroBlogPredict/weibo_dc_parse2015_link_filter', 'r') as f:
+    output = open('F:/github/WoLongBigData/DataManager/weibo'+Wid+'follower.txt', 'w+')
+    with open('F:/Document/MicroBlogPredict/weibo_dc_parse2015_link_filter_follower.txt', 'r') as f:
         for position, line in enumerate(f):
-            t= line.strip().split('\t')
+            t= line.strip().split(',')
             print(t[0])
             if t[0] in G.nodes():
                 output.writelines(line)
@@ -120,23 +131,24 @@ def PredictWidth(U,G_Relation,p,P):#最终转发规模预测
 
 G = nx.DiGraph()
 G_Relation = nx.DiGraph()
-Wid='3794305741726764'
-mainNode='2724513'
-with open('E:/data/PredictMicroblog/WoLongBigData/DataManager/weibo'+Wid+'.txt', 'r') as f:
+Wid='3794545218812248'
+mainNode='7460165'
+with open('F:/github/WoLongBigData/DataManager/weibo'+Wid+'.txt', 'r') as f:
     for position, line in enumerate(f):
         t= line.strip().split('\001')
         G.add_node(t[2],time=int(t[3]),content=t[4])
         G.add_edge(t[1],t[2])
 G = MissInformation(G,mainNode)
 
-with open('E:/data/PredictMicroblog/WoLongBigData/DataManager/weibo'+Wid+'relationship.txt', 'r') as f:
-    for position, line in enumerate(f):
-        t= line.strip().split('\t')
-        if t.__len__()>1:
-            for i in t[1].split('\001'):
-                G_Relation.add_edge(t[0],i)
-print PredictWidth(['2724513'],G_Relation,0.6,0.6)
+# with open('E:/data/PredictMicroblog/WoLongBigData/DataManager/weibo'+Wid+'relationship.txt', 'r') as f:
+#     for position, line in enumerate(f):
+#         t= line.strip().split('\t')
+#         if t.__len__()>1:
+#             for i in t[1].split('\001'):
+#                 G_Relation.add_edge(t[0],i)
+# print PredictWidth(['2724513'],G_Relation,0.6,0.6)
 # print FollowerRatio(G,G_Relation)
+RTDepth(G,mainNode,Wid)
 
 
 
