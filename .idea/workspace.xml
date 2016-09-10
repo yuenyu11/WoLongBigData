@@ -5,11 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8742685e-731e-4bd3-8424-db00a67723ac" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/局部加权平均.py" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/广义线性拟合.py" />
-      <change type="DELETED" beforePath="F:\github\WoLongBigData\Test.py" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/DataManager/3000WidthOneHours.txt" afterPath="$PROJECT_DIR$/DataManager/3000WidthOneHours.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/PredictMethod.py" afterPath="$PROJECT_DIR$/PredictMethod.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/SimpleStatistic.py" afterPath="$PROJECT_DIR$/SimpleStatistic.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/局部加权平均.py" afterPath="$PROJECT_DIR$/局部加权平均.py" />
     </list>
     <ignored path="WoLongBigData.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -23,11 +23,11 @@
   </component>
   <component name="ChangesViewManager" flattened_view="true" show_ignored="false" />
   <component name="CoverageDataManager">
-    <SUITE FILE_PATH="coverage/WoLongBigData$PredictMethod.coverage" NAME="PredictMethod Coverage Results" MODIFIED="1473306807913" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/WoLongBigData$PredictMethod.coverage" NAME="PredictMethod Coverage Results" MODIFIED="1473503107758" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/WoLongBigData$Test.coverage" NAME="Test Coverage Results" MODIFIED="1473488306341" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/WoLongBigData$test.coverage" NAME="test Coverage Results" MODIFIED="1472744143524" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/WoLongBigData$.coverage" NAME="局部加权平均 Coverage Results" MODIFIED="1473489671196" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/WoLongBigData$SimpleStatistic.coverage" NAME="SimpleStatistic Coverage Results" MODIFIED="1473485383216" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/WoLongBigData$.coverage" NAME="局部加权平均 Coverage Results" MODIFIED="1473503068871" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/WoLongBigData$SimpleStatistic.coverage" NAME="SimpleStatistic Coverage Results" MODIFIED="1473496278180" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/WoLongBigData$Pandas.coverage" NAME="Pandas Coverage Results" MODIFIED="1473487273719" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
   <component name="CreatePatchCommitExecutor">
@@ -42,11 +42,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="SimpleStatistic.py" pinned="false" current-in-tab="true">
+      <file leaf-file-name="SimpleStatistic.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/SimpleStatistic.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.58536583" vertical-offset="7544" max-vertical-offset="8240">
-              <caret line="194" column="0" selection-start-line="194" selection-start-column="0" selection-end-line="194" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="7400" max-vertical-offset="8240">
+              <caret line="188" column="37" selection-start-line="187" selection-start-column="6" selection-end-line="188" selection-end-column="37" />
               <folding>
                 <element signature="e#49#80#0" expanded="true" />
               </folding>
@@ -57,8 +57,8 @@
       <file leaf-file-name="局部加权平均.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/局部加权平均.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="3120" max-vertical-offset="3600">
-              <caret line="83" column="26" selection-start-line="83" selection-start-column="26" selection-end-line="83" selection-end-column="26" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="2880" max-vertical-offset="3600">
+              <caret line="78" column="14" selection-start-line="78" selection-start-column="14" selection-end-line="78" selection-end-column="14" />
               <folding />
             </state>
           </provider>
@@ -76,11 +76,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="PredictMethod.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="PredictMethod.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/PredictMethod.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="471" max-vertical-offset="2160">
-              <caret line="35" column="43" selection-start-line="35" selection-start-column="43" selection-end-line="35" selection-end-column="43" />
+            <state vertical-scroll-proportion="0.5555556" vertical-offset="1280" max-vertical-offset="2040">
+              <caret line="37" column="35" selection-start-line="37" selection-start-column="35" selection-end-line="37" selection-end-column="35" />
               <folding>
                 <element signature="e#50#65#0" expanded="true" />
               </folding>
@@ -97,11 +97,11 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/test.py" />
-        <option value="$PROJECT_DIR$/PredictMethod.py" />
         <option value="$PROJECT_DIR$/Pandas.py" />
         <option value="$PROJECT_DIR$/Test.py" />
-        <option value="$PROJECT_DIR$/局部加权平均.py" />
         <option value="$PROJECT_DIR$/SimpleStatistic.py" />
+        <option value="$PROJECT_DIR$/局部加权平均.py" />
+        <option value="$PROJECT_DIR$/PredictMethod.py" />
       </list>
     </option>
   </component>
@@ -109,10 +109,9 @@
     <detection-done>true</detection-done>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-8" />
-    <option name="y" value="-8" />
-    <option name="width" value="1382" />
-    <option name="height" value="744" />
+    <option name="x" value="-7" />
+    <option name="width" value="1380" />
+    <option name="height" value="735" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -175,7 +174,7 @@
       <console-settings />
     </option>
   </component>
-  <component name="RunManager" selected="Python.局部加权平均">
+  <component name="RunManager" selected="Python.PredictMethod">
     <configuration default="false" name="Pandas" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -212,26 +211,6 @@
       <module name="WoLongBigData" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
       <option name="SCRIPT_NAME" value="$PROJECT_DIR$/PredictMethod.py" />
-      <option name="PARAMETERS" value="" />
-      <option name="SHOW_COMMAND_LINE" value="false" />
-      <RunnerSettings RunnerId="PythonRunner" />
-      <ConfigurationWrapper RunnerId="PythonRunner" />
-      <method />
-    </configuration>
-    <configuration default="false" name="局部加权平均" type="PythonConfigurationType" factoryName="Python" temporary="true">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <envs>
-        <env name="PYTHONUNBUFFERED" value="1" />
-      </envs>
-      <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="true" />
-      <option name="ADD_CONTENT_ROOTS" value="true" />
-      <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="WoLongBigData" />
-      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/局部加权平均.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <RunnerSettings RunnerId="PythonRunner" />
@@ -426,6 +405,28 @@
       <envs />
       <method />
     </configuration>
+    <configuration default="false" name="局部加权平均" type="PythonConfigurationType" factoryName="Python">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <module name="WoLongBigData" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" enabled="false" sample_coverage="true" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/局部加权平均.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <RunnerSettings RunnerId="PyDebugRunner" />
+      <RunnerSettings RunnerId="PythonRunner" />
+      <ConfigurationWrapper RunnerId="PyDebugRunner" />
+      <ConfigurationWrapper RunnerId="PythonRunner" />
+      <method />
+    </configuration>
     <configuration default="false" name="SimpleStatistic" type="PythonConfigurationType" factoryName="Python">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -491,18 +492,17 @@
       <method />
     </configuration>
     <list size="6">
-      <item index="0" class="java.lang.String" itemvalue="Python.SimpleStatistic" />
-      <item index="1" class="java.lang.String" itemvalue="Python.test" />
-      <item index="2" class="java.lang.String" itemvalue="Python.Test" />
-      <item index="3" class="java.lang.String" itemvalue="Python.Pandas" />
-      <item index="4" class="java.lang.String" itemvalue="Python.PredictMethod" />
-      <item index="5" class="java.lang.String" itemvalue="Python.局部加权平均" />
+      <item index="0" class="java.lang.String" itemvalue="Python.局部加权平均" />
+      <item index="1" class="java.lang.String" itemvalue="Python.SimpleStatistic" />
+      <item index="2" class="java.lang.String" itemvalue="Python.test" />
+      <item index="3" class="java.lang.String" itemvalue="Python.Test" />
+      <item index="4" class="java.lang.String" itemvalue="Python.Pandas" />
+      <item index="5" class="java.lang.String" itemvalue="Python.PredictMethod" />
     </list>
     <recent_temporary>
-      <list size="3">
-        <item index="0" class="java.lang.String" itemvalue="Python.局部加权平均" />
+      <list size="2">
+        <item index="0" class="java.lang.String" itemvalue="Python.PredictMethod" />
         <item index="1" class="java.lang.String" itemvalue="Python.Pandas" />
-        <item index="2" class="java.lang.String" itemvalue="Python.PredictMethod" />
       </list>
     </recent_temporary>
   </component>
@@ -520,7 +520,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="1" />
+    <frame x="-7" y="0" width="1380" height="735" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
@@ -529,13 +529,13 @@
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3527559" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.35782748" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.12737921" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.12756598" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.399361" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
@@ -806,16 +806,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/PredictMethod.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="871" max-vertical-offset="2160">
-          <caret line="35" column="43" selection-start-line="35" selection-start-column="43" selection-end-line="35" selection-end-column="43" />
-          <folding>
-            <element signature="e#50#65#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/广义线性拟合.py">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="1671" max-vertical-offset="2280">
@@ -826,20 +816,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/SimpleStatistic.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="7400" max-vertical-offset="8240">
+          <caret line="188" column="37" selection-start-line="187" selection-start-column="6" selection-end-line="188" selection-end-column="37" />
+          <folding>
+            <element signature="e#49#80#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/局部加权平均.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="3120" max-vertical-offset="3600">
-          <caret line="83" column="26" selection-start-line="83" selection-start-column="26" selection-end-line="83" selection-end-column="26" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="2880" max-vertical-offset="3600">
+          <caret line="78" column="14" selection-start-line="78" selection-start-column="14" selection-end-line="78" selection-end-column="14" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/SimpleStatistic.py">
+    <entry file="file://$PROJECT_DIR$/PredictMethod.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.58536583" vertical-offset="7544" max-vertical-offset="8240">
-          <caret line="194" column="0" selection-start-line="194" selection-start-column="0" selection-end-line="194" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.5555556" vertical-offset="1280" max-vertical-offset="2040">
+          <caret line="37" column="35" selection-start-line="37" selection-start-column="35" selection-end-line="37" selection-end-column="35" />
           <folding>
-            <element signature="e#49#80#0" expanded="true" />
+            <element signature="e#50#65#0" expanded="true" />
           </folding>
         </state>
       </provider>

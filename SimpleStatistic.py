@@ -173,16 +173,16 @@ def TestDepth():#测试微博的转发深度
         p=RTDepth(G,mainNode)
         out.writelines(s+'\t'+str(p[0])+'\t'+str(p[1])+'\t'+str(p[2])+'\t'+str(p[3])+'\t'+str(p[4])+'\n')
     out.close()
-# G = nx.DiGraph()
+G = nx.DiGraph()
 # G_Relation = nx.DiGraph()
-# Wid='3794545218812248'
-# mainNode='7460165'
-# with open('F:/github/WoLongBigData/DataManager/weibo'+Wid+'.txt', 'r') as f:
-#     for position, line in enumerate(f):
-#         t= line.strip().split('\001')
-#         G.add_node(t[2],time=int(t[3]),content=t[4])
-#         G.add_edge(t[1],t[2])
-# G = MissInformation(G,mainNode)
+Wid='3794305741726764'
+mainNode='2724513'
+with open('F:/github/WoLongBigData/DataManager/weibo'+Wid+'.txt', 'r') as f:
+    for position, line in enumerate(f):
+        t= line.strip().split('\001')
+        G.add_node(t[2],time=int(t[3]),content=t[4])
+        G.add_edge(t[1],t[2])
+G = MissInformation(G,mainNode)
 
 # with open('E:/data/PredictMicroblog/WoLongBigData/DataManager/weibo'+Wid+'relationship.txt', 'r') as f:
 #     for position, line in enumerate(f):
@@ -192,7 +192,7 @@ def TestDepth():#测试微博的转发深度
 #                 G_Relation.add_edge(t[0],i)
 # print PredictWidth(['2724513'],G_Relation,0.6,0.6)
 # print FollowerRatio(G,G_Relation)
-
+RTWidth(G,Wid)
 
 
 
