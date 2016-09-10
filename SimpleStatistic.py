@@ -5,9 +5,10 @@ import networkx as nx
 import numpy as np
 
 def MissInformation(G,mainNode):#转发链断裂处理
-    for i in G.nodes():
-        if G.in_degree(i)==0 and i !=mainNode:
-            G.add_edge(mainNode,i)
+    temp = nx.connected_components(G.to_undirected())#未连通子图
+    for i in temp:
+        if i.__contains__(mainNode)==False:
+            G.add_edge(mainNode,list(i)[0])
     return G
 def OneMicroblog(Wid):# 提取一条微博信息
     output = open('F:/github/WoLongBigData/DataManager/weibo'+Wid+'.txt', 'w+')
@@ -51,6 +52,9 @@ def RTWidth(G,Wid):#一条微博信息的累计传播广度
     for i in range(width.__len__()-1):
         width[i+1] =width[i+1]+width[i]
     x=range(300)
+    out=open('F:/github/WoLongBigData/DataManager/weibo'+Wid+'Width.txt', 'w+')
+    for i in range(len(width)):
+        out.writelines(str(1)+'\t'+str(i)+'\t'+str(width[i])+'\n')
     plt.plot(x,width,color='r')#转发规模随时间变化
     plt.savefig('Picture/weibo'+Wid+'Width.png')
     plt.show()
@@ -67,11 +71,11 @@ def RTWidthByTime(G,Wid):#一条微博信息的每个时刻（15min）的传播�
     plt.show()
 
 
-def RTDepth(G,mainNode,Wid):#一条微博信息每时刻的传播深度
-    depth=['']*300
+def RTDepth(G,mainNode):#一条微博信息每时刻的传播深度
+    depth=['']*5
     time = nx.get_node_attributes(G,'time')
     for i in time:
-        if time[i]/900 < 288:
+        if time[i]/900 < 5:
             depth[(time[i]/900)+1]=depth[(time[i]/900)+1]+i+'\001'
     temp=[mainNode]
     for i in range(depth.__len__()):
@@ -79,10 +83,11 @@ def RTDepth(G,mainNode,Wid):#一条微博信息每时刻的传播深度
             temp = temp+depth[i].split('\001')[:-1]
             NG=MissInformation(G.subgraph(temp),mainNode)
             depth[i]=nx.eccentricity(NG.to_undirected())[mainNode]
-    x=range(300)
-    plt.plot(x,depth,color='r')#传播深度随时间变化
-    plt.savefig('Picture/weibo'+Wid+'Depth.png')
-    plt.show()
+    return depth
+    # x=range(300)
+    # plt.plot(x,depth,color='r')#传播深度随时间变化
+    # plt.savefig('Picture/weibo'+Wid+'Depth.png')
+    # plt.show()
 
 def ExtractRelationNetwork(G,Wid):#提取一条微博的关系网络
     output = open('F:/github/WoLongBigData/DataManager/weibo'+Wid+'follower.txt', 'w+')
@@ -116,29 +121,68 @@ def FollowerRatio(G,G_Relation):#转发粉丝/总粉丝
 
     sum =G_Relation.in_degree('2724513')
     return sumF/sum
-def PredictWidth(U,G_Relation,p,P):#最终转发规模预测
-    sum = 0
-    NU=['']
-    if p >0.1:
-        for i in U:
-            if G.has_node(i):
-                sum=sum +G_Relation.in_degree(i)*p/0.7
-                for j in G_Relation.in_edges(i):
-                    NU.append(j[0])
-        return sum+PredictWidth(NU,G_Relation,p*P,P)
-    else:
-        return 0
 
-G = nx.DiGraph()
-G_Relation = nx.DiGraph()
-Wid='3794545218812248'
-mainNode='7460165'
-with open('F:/github/WoLongBigData/DataManager/weibo'+Wid+'.txt', 'r') as f:
-    for position, line in enumerate(f):
-        t= line.strip().split('\001')
-        G.add_node(t[2],time=int(t[3]),content=t[4])
-        G.add_edge(t[1],t[2])
-G = MissInformation(G,mainNode)
+def TestWeiBoOneHour():#测试微博一小时转发数据
+    out=open('F:/github/WoLongBigData/DataManager/3000WidthOneHours.txt', 'w+')
+    s='testWeibo1'
+    width=[0]*5
+    with open('F:/Document/MicroBlogPredict/testRepostBeforeFirstHour.txt', 'r') as f:
+        for position, line in enumerate(f):
+            t= line.strip().split('\001')
+            if t[0]==s:
+                if int(t[3])<3600:
+                    width[(int(t[3])/900)+1]=width[(int(t[3])/900)+1]+1
+            else:
+                for i in range(width.__len__()-1):
+                    width[i+1] =width[i+1]+width[i]
+                out.writelines(s+'\t'+str(width[0])+'\t'+str(width[1])+'\t'+str(width[2])+'\t'+str(width[3])+'\t'+str(width[4])+'\n')
+                s=t[0]
+                width=[0]*5
+                if int(t[3])<3600:
+                    width[(int(t[3])/900)+1]=width[(int(t[3])/900)+1]+1
+    out.close()
+def TestDepth():#测试微博的转发深度
+    MainNode = nx.DiGraph()
+    with open('F:/Document/MicroBlogPredict/WeiboProfile.test', 'r') as f:
+        for position, line in enumerate(f):
+            t= line.strip().split('\001')
+            MainNode.add_edge(t[0],t[1])
+    out=open('F:/github/WoLongBigData/DataManager/3000DepthOneHours.txt', 'w+')
+    s='testWeibo1'
+    depth=[0]*5
+    G = nx.DiGraph()
+    with open('F:/Document/MicroBlogPredict/testRepostBeforeFirstHour.txt', 'r') as f:
+        for position, line in enumerate(f):
+            t= line.strip().split('\001')
+            if t[0]==s:
+                if int(t[3])<3600:
+                    G.add_node(t[2],time=int(t[3]))
+                    G.add_edge(t[1],t[2])
+            else:
+                print s
+                mainNode = MainNode.edges(s)[0][1]
+                G = MissInformation(G,mainNode)
+                p=RTDepth(G,mainNode)
+                out.writelines(s+'\t'+str(p[0])+'\t'+str(p[1])+'\t'+str(p[2])+'\t'+str(p[3])+'\t'+str(p[4])+'\n')
+                s=t[0]
+                depth=[0]*5
+                G = nx.DiGraph()
+        print s
+        mainNode = MainNode.edges(s)[0][1]
+        G = MissInformation(G,mainNode)
+        p=RTDepth(G,mainNode)
+        out.writelines(s+'\t'+str(p[0])+'\t'+str(p[1])+'\t'+str(p[2])+'\t'+str(p[3])+'\t'+str(p[4])+'\n')
+    out.close()
+# G = nx.DiGraph()
+# G_Relation = nx.DiGraph()
+# Wid='3794545218812248'
+# mainNode='7460165'
+# with open('F:/github/WoLongBigData/DataManager/weibo'+Wid+'.txt', 'r') as f:
+#     for position, line in enumerate(f):
+#         t= line.strip().split('\001')
+#         G.add_node(t[2],time=int(t[3]),content=t[4])
+#         G.add_edge(t[1],t[2])
+# G = MissInformation(G,mainNode)
 
 # with open('E:/data/PredictMicroblog/WoLongBigData/DataManager/weibo'+Wid+'relationship.txt', 'r') as f:
 #     for position, line in enumerate(f):
@@ -148,7 +192,9 @@ G = MissInformation(G,mainNode)
 #                 G_Relation.add_edge(t[0],i)
 # print PredictWidth(['2724513'],G_Relation,0.6,0.6)
 # print FollowerRatio(G,G_Relation)
-RTDepth(G,mainNode,Wid)
+
+
+
 
 
 
